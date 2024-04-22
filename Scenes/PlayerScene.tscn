@@ -1,0 +1,222 @@
+[gd_scene load_steps=36 format=3 uid="uid://bu1xorjsamwbq"]
+
+[ext_resource type="Script" path="res://Scenes/PlayerScene.gd" id="1_5doip"]
+[ext_resource type="Texture2D" uid="uid://cldx5csl5y2cv" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile020.png" id="1_wdybx"]
+[ext_resource type="Texture2D" uid="uid://cs8x227mfyemf" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile021.png" id="2_pvft8"]
+[ext_resource type="Texture2D" uid="uid://dv5ffwvn3kxgf" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile022.png" id="3_ohubs"]
+[ext_resource type="Texture2D" uid="uid://kwyr3kpjd0uj" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile026.png" id="4_kolh5"]
+[ext_resource type="Texture2D" uid="uid://d4akq0ljtcveu" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile027.png" id="5_3elju"]
+[ext_resource type="Texture2D" uid="uid://konrflgumi6e" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile028.png" id="6_62c3b"]
+[ext_resource type="Texture2D" uid="uid://btj2wppppc7us" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile029.png" id="7_l2o6d"]
+[ext_resource type="Texture2D" uid="uid://cybtkldpmf8ep" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile032.png" id="8_ft4jc"]
+[ext_resource type="Texture2D" uid="uid://di78dapnmaoru" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile033.png" id="9_ojhjv"]
+[ext_resource type="Texture2D" uid="uid://oyewkyviobas" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile034.png" id="10_17c0a"]
+[ext_resource type="Texture2D" uid="uid://bjh8ri7yx1p8" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile035.png" id="11_wub5l"]
+[ext_resource type="Texture2D" uid="uid://cluwq04ddet3b" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile038.png" id="12_ptbtv"]
+[ext_resource type="Texture2D" uid="uid://gbqdltlf2sbh" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile039.png" id="13_ylv8x"]
+[ext_resource type="Texture2D" uid="uid://cqsfhwx5m0rlk" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile040.png" id="14_ovad3"]
+[ext_resource type="Texture2D" uid="uid://dja6ugmoaru54" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile041.png" id="15_anbvm"]
+[ext_resource type="Texture2D" uid="uid://dmfhotfxp8hmf" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile044.png" id="16_aurx4"]
+[ext_resource type="Texture2D" uid="uid://cbnh5ip64syfj" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile045.png" id="17_7o7r6"]
+[ext_resource type="Texture2D" uid="uid://i7mu61mm4w0t" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile046.png" id="18_33fcl"]
+[ext_resource type="Texture2D" uid="uid://b1ihmejk53jc4" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile047.png" id="19_3jbqx"]
+[ext_resource type="Texture2D" uid="uid://dhpxdyxsefj2p" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile000.png" id="20_r4r11"]
+[ext_resource type="Texture2D" uid="uid://8xvplpi461nd" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile001.png" id="21_qn0j6"]
+[ext_resource type="Texture2D" uid="uid://bwjmp632ieji3" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile002.png" id="22_m25br"]
+[ext_resource type="Texture2D" uid="uid://cxway005dvnyc" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile003.png" id="23_p7cdg"]
+[ext_resource type="Texture2D" uid="uid://dnudsrw2w78ma" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile004.png" id="24_ntde8"]
+[ext_resource type="Texture2D" uid="uid://dmkviov5bwolv" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile005.png" id="25_1ww5b"]
+[ext_resource type="Texture2D" uid="uid://bjohx2fs6l3kx" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile009.png" id="26_d83g8"]
+[ext_resource type="Texture2D" uid="uid://b6bt52kis0kp0" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile006.png" id="27_vk6y0"]
+[ext_resource type="Texture2D" uid="uid://eo2mq7u3fqb2" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile012.png" id="28_gjp41"]
+[ext_resource type="Texture2D" uid="uid://c1ynw7wuht1uh" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile007.png" id="29_447d2"]
+[ext_resource type="Texture2D" uid="uid://btkhsvmu51eg3" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile008.png" id="30_ypp3l"]
+[ext_resource type="Texture2D" uid="uid://ctk3b1y7qpeay" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft1.png" id="32_c0tmn"]
+[ext_resource type="Texture2D" uid="uid://q345tu6n5oro" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft2.png" id="33_x081u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tikq0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wdybx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pvft8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pvft8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ohubs")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kolh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3elju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3elju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_62c3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l2o6d")
+}],
+"loop": true,
+"name": &"attack_down",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ft4jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ojhjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ojhjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_17c0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wub5l")
+}],
+"loop": true,
+"name": &"attack_down_alt",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ptbtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ylv8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ylv8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ovad3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_anbvm")
+}],
+"loop": true,
+"name": &"attack_up",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_aurx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7o7r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7o7r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_33fcl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3jbqx")
+}],
+"loop": true,
+"name": &"attack_up_alt",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_r4r11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qn0j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m25br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p7cdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ntde8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1ww5b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_d83g8")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_vk6y0")
+}],
+"loop": true,
+"name": &"run_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_gjp41")
+}],
+"loop": true,
+"name": &"take_damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_447d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ypp3l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_c0tmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_x081u")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inmh3"]
+radius = 23.0
+height = 68.0
+
+[node name="PlayerScene" type="Area2D"]
+script = ExtResource("1_5doip")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tikq0")
+animation = &"walk_left"
+frame_progress = 0.185775
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_inmh3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
