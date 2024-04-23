@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs87dqehc7pm0"]
+
+[ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
+[ext_resource type="PackedScene" uid="uid://ktfwpjvcep76" path="res://Scenes/Platform.tscn" id="2_rbue6"]
+
+[node name="Main" type="Node"]
+
+[node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
+levelStartPos = Vector2(50, 40)
+jumpHeight = 140.0
+jumpTimeToPeak = 0.5
+jumpTimeToDescent = 0.35
+
+[node name="Platform" parent="." instance=ExtResource("2_rbue6")]
+position = Vector2(101, 273)
+
+[node name="Platform2" parent="." instance=ExtResource("2_rbue6")]
+position = Vector2(256, 370)
+
+[node name="Platform3" parent="." instance=ExtResource("2_rbue6")]
+position = Vector2(478, 298)
