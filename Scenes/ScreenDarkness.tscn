@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmagimu7eqe8s"]
+
+[node name="ScreenDarkness" type="Node2D"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=6 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://ktfwpjvcep76" path="res://Scenes/Platform.tscn" id="2_rbue6"]
+[ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
+[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="4_ljw0d"]
+[ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
 
 [node name="Main" type="Node"]
 
@@ -19,3 +22,15 @@ position = Vector2(256, 370)
 
 [node name="Platform3" parent="." instance=ExtResource("2_rbue6")]
 position = Vector2(478, 298)
+
+[node name="ScreenDarkness" parent="." instance=ExtResource("3_saqts")]
+
+[node name="Torch" parent="." instance=ExtResource("4_ljw0d")]
+position = Vector2(46, 240)
+
+[node name="Background" parent="." instance=ExtResource("5_td7ew")]
+z_index = -1
+position = Vector2(579, 353)
+scale = Vector2(19, 14)
+
+[editable path="Torch"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bu1xorjsamwbq"]
+[gd_scene load_steps=38 format=3 uid="uid://bu1xorjsamwbq"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerScene.gd" id="1_5doip"]
 [ext_resource type="Texture2D" uid="uid://cldx5csl5y2cv" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile020.png" id="1_wdybx"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://btkhsvmu51eg3" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile008.png" id="30_ypp3l"]
 [ext_resource type="Texture2D" uid="uid://ctk3b1y7qpeay" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft1.png" id="32_c0tmn"]
 [ext_resource type="Texture2D" uid="uid://q345tu6n5oro" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft2.png" id="33_x081u"]
+[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="35_isvhf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tikq0"]
 animations = [{
@@ -226,6 +227,15 @@ animation = &"attack"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_inmh3")
 
+[node name="Torch" parent="." instance=ExtResource("35_isvhf")]
+
+[node name="PointLight2D" parent="Torch" index="0"]
+energy = 0.42
+range_z_min = -512
+range_z_max = 512
+
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+
+[editable path="Torch"]
