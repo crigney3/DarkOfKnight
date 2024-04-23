@@ -1,14 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=7 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://ktfwpjvcep76" path="res://Scenes/Platform.tscn" id="2_rbue6"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
 [ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="4_ljw0d"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
+[ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="6_syeam"]
 
 [node name="Main" type="Node"]
 
+[node name="Torch3" parent="." instance=ExtResource("4_ljw0d")]
+z_index = 1
+position = Vector2(476, 270)
+
+[node name="Torch2" parent="." instance=ExtResource("4_ljw0d")]
+z_index = 1
+position = Vector2(309, 357)
+
 [node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
+collision_layer = 3
+collision_mask = 3
 levelStartPos = Vector2(50, 40)
 jumpHeight = 140.0
 jumpTimeToPeak = 0.5
@@ -29,8 +40,15 @@ position = Vector2(478, 298)
 position = Vector2(46, 240)
 
 [node name="Background" parent="." instance=ExtResource("5_td7ew")]
-z_index = -1
+visible = false
+z_index = -4
 position = Vector2(579, 353)
 scale = Vector2(19, 14)
 
+[node name="LevelEndBox" parent="." instance=ExtResource("6_syeam")]
+z_index = -1
+position = Vector2(508, 239)
+
+[editable path="Torch3"]
+[editable path="Torch2"]
 [editable path="Torch"]

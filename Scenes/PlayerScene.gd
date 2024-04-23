@@ -3,9 +3,11 @@ extends CharacterBody2D
 @export var walkSpeed = 200
 var screenSize
 var isAttacking
+var levelWon
 signal getHitByEnemy
 signal loseLevel
 signal attack
+signal getHurtByTrapOrFalling
 var lastFrameVelocity : Vector2
 var health
 var collision
@@ -27,11 +29,17 @@ func _ready():
 	velocity = Vector2.ZERO
 	isAttacking = false
 	health = 3
+	levelWon = false
 	jumpVelocity = ((2.0 * jumpHeight) / jumpTimeToPeak) * -1.0
 	jumpGravity = ((-2.0 * jumpHeight) / (jumpTimeToPeak * jumpTimeToPeak)) * -1.0
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
 
 func _physics_process(delta):
+	if levelWon:
+		$AnimatedSprite2D.animation = "win"
+		$AnimatedSprite2D.play()
+		return
+	
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * walkSpeed
 	
@@ -88,18 +96,29 @@ func get_input_velocity() -> float:
 	return horizontal
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 func _on_body_entered(body):
-	health -= 1
-	getHitByEnemy.emit()
+	if body.is_in_group("enemies"):
+		health -= 1
+		getHitByEnemy.emit()
+	elif body.is_in_group("levelWin"):
+		levelWon = true
+		print(levelWon)
+	elif body.is_in_group("pitOrTrap"):
+		health -= 1
+		getHurtByTrapOrFalling.emit()
+
 	if health <= 0:
 		hide()
 		loseLevel.emit()
 		$CollisionShape2D.set_deferred("disabled", true)
 
+
 func _on_animated_sprite_2d_animation_looped():
 	if isAttacking:
 		isAttacking = false
+		
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bu1xorjsamwbq"]
+[gd_scene load_steps=40 format=3 uid="uid://bu1xorjsamwbq"]
 
 [ext_resource type="Script" path="res://Scenes/PlayerScene.gd" id="1_5doip"]
 [ext_resource type="Texture2D" uid="uid://cldx5csl5y2cv" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile020.png" id="1_wdybx"]
@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://ctk3b1y7qpeay" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft1.png" id="32_c0tmn"]
 [ext_resource type="Texture2D" uid="uid://q345tu6n5oro" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/walkLeft2.png" id="33_x081u"]
 [ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="35_isvhf"]
+[ext_resource type="Texture2D" uid="uid://uhsvro6caatr" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile024.png" id="35_nf4jh"]
+[ext_resource type="Texture2D" uid="uid://c4ybn5h6kra3y" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile025.png" id="36_dotwp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tikq0"]
 animations = [{
@@ -209,20 +211,32 @@ animations = [{
 "loop": true,
 "name": &"walk_left",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_nf4jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dotwp")
+}],
+"loop": true,
+"name": &"win",
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inmh3"]
 radius = 23.0
 height = 68.0
 
-[node name="PlayerScene" type="CharacterBody2D"]
+[node name="PlayerScene" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_5doip")
 levelStartPos = Vector2(0, 20)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tikq0")
-animation = &"attack"
+animation = &"win"
+frame_progress = 0.220307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_inmh3")
