@@ -99,9 +99,11 @@ func get_input_velocity() -> float:
 		return 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
+func _process(delta):
+	if $Torch/PointLight2D.energy > 0.3:
+		$Torch/PointLight2D.range_z_max -= 32 * delta
+		$Torch/PointLight2D.range_z_min += 32 * delta
+		$Torch/PointLight2D.energy -= 0.2 * delta
 
 func _on_body_entered(body):
 	if body.is_in_group("enemies"):
@@ -126,3 +128,10 @@ func _on_area_2d_area_entered(area):
 		levelWon = true
 	if area.is_in_group("torchBoostPickup"):
 		torchBoostPickedUp.emit()
+		area.queue_free()
+
+func _on_torch_boost_picked_up():
+	$Torch/PointLight2D.range_z_max = 1536
+	$Torch/PointLight2D.range_z_min = -1536
+	$Torch/PointLight2D.energy = 2.0
+	print("a")
