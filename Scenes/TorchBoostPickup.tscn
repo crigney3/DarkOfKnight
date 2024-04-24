@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://44bfuyymfw6s"]
+
+[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="1_ucmg6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4843u"]
+radius = 39.0128
+
+[node name="TorchBoostPickup" type="Area2D" groups=["torchBoostPickup"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.440001, 1)
+shape = SubResource("CircleShape2D_4843u")
+
+[node name="Torch" parent="." instance=ExtResource("1_ucmg6")]
+
+[editable path="Torch"]

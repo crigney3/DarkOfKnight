@@ -38,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://uhsvro6caatr" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile024.png" id="35_nf4jh"]
 [ext_resource type="Texture2D" uid="uid://c4ybn5h6kra3y" path="res://KnightAssets/Tiny Swords (Update 010)/Factions/Knights/Troops/Warrior/Blue/tile025.png" id="36_dotwp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ddwg"]
+size = Vector2(48, 75)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tikq0"]
 animations = [{
 "frames": [{
@@ -224,22 +227,21 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inmh3"]
-radius = 23.0
-height = 68.0
-
 [node name="PlayerScene" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+collision_mask = 29
 script = ExtResource("1_5doip")
 levelStartPos = Vector2(0, 20)
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -7)
+shape = SubResource("RectangleShape2D_1ddwg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tikq0")
 animation = &"win"
 frame_progress = 0.220307
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_inmh3")
 
 [node name="Torch" parent="." instance=ExtResource("35_isvhf")]
 
@@ -248,8 +250,21 @@ energy = 0.42
 range_z_min = -512
 range_z_max = 512
 
+[node name="AnimatedSprite2D" parent="Torch" index="1"]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 29
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -6)
+shape = SubResource("RectangleShape2D_1ddwg")
+
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 
 [editable path="Torch"]

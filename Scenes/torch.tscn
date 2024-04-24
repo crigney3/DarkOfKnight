@@ -1,7 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://brfhtyoiviskj"]
+[gd_scene load_steps=11 format=3 uid="uid://brfhtyoiviskj"]
 
 [ext_resource type="Texture2D" uid="uid://ba248w3l68umw" path="res://2d_lights_and_shadows_neutral_point_light.webp" id="1_gcogj"]
 [ext_resource type="Script" path="res://Scenes/torch.gd" id="1_i60yh"]
+[ext_resource type="Texture2D" uid="uid://dnnp405th1s3m" path="res://KnightAssets/TorchCutouts/torch0.png" id="3_b73e5"]
+[ext_resource type="Texture2D" uid="uid://b5pl22aurldu5" path="res://KnightAssets/TorchCutouts/torch1.png" id="4_sfqk8"]
+[ext_resource type="Texture2D" uid="uid://bqb1ealsf7w02" path="res://KnightAssets/TorchCutouts/torch2.png" id="5_6mirc"]
+[ext_resource type="Texture2D" uid="uid://ddexx7kwx8u18" path="res://KnightAssets/TorchCutouts/torch3.png" id="6_82kk0"]
+[ext_resource type="Texture2D" uid="uid://bbbyhgrjld3ie" path="res://KnightAssets/TorchCutouts/torch4.png" id="7_at08a"]
+[ext_resource type="Texture2D" uid="uid://c6dbsm1moeu6b" path="res://KnightAssets/TorchCutouts/torch5.png" id="8_scc8n"]
+[ext_resource type="Texture2D" uid="uid://b7ip3h1twfgb0" path="res://KnightAssets/TorchCutouts/torch6.png" id="9_8xmwj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71wl4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b73e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sfqk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6mirc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_82kk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_at08a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_scc8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8xmwj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="Torch" type="Node2D"]
 script = ExtResource("1_i60yh")
@@ -10,3 +46,7 @@ script = ExtResource("1_i60yh")
 color = Color(0.852594, 0.401381, 3.85046e-07, 1)
 shadow_enabled = true
 texture = ExtResource("1_gcogj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_71wl4")
+frame_progress = 0.997428

@@ -8,6 +8,7 @@ signal getHitByEnemy
 signal loseLevel
 signal attack
 signal getHurtByTrapOrFalling
+signal torchBoostPickedUp
 var lastFrameVelocity : Vector2
 var health
 var collision
@@ -34,19 +35,19 @@ func _ready():
 	jumpGravity = ((-2.0 * jumpHeight) / (jumpTimeToPeak * jumpTimeToPeak)) * -1.0
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
 
-func _physics_process(delta):
+func _physics_process(delta):	
+	velocity.y += get_gravity() * delta
+	velocity.x = get_input_velocity() * walkSpeed
+	
+	if Input.is_action_just_pressed("Jump") and is_on_floor() and !levelWon:
+		jump()
+		
+	move_and_slide()
+	
 	if levelWon:
 		$AnimatedSprite2D.animation = "win"
 		$AnimatedSprite2D.play()
 		return
-	
-	velocity.y += get_gravity() * delta
-	velocity.x = get_input_velocity() * walkSpeed
-	
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		jump()
-		
-	move_and_slide()
 	
 	if !isAttacking:
 		if velocity.x != 0 or velocity.y != 0:
@@ -92,8 +93,10 @@ func get_input_velocity() -> float:
 		horizontal += 1.0
 	if Input.is_action_pressed("moveLeft"):
 		horizontal -= 1.0
-		
-	return horizontal
+	if !levelWon:
+		return horizontal
+	else:
+		return 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -104,9 +107,6 @@ func _on_body_entered(body):
 	if body.is_in_group("enemies"):
 		health -= 1
 		getHitByEnemy.emit()
-	elif body.is_in_group("levelWin"):
-		levelWon = true
-		print(levelWon)
 	elif body.is_in_group("pitOrTrap"):
 		health -= 1
 		getHurtByTrapOrFalling.emit()
@@ -120,5 +120,9 @@ func _on_body_entered(body):
 func _on_animated_sprite_2d_animation_looped():
 	if isAttacking:
 		isAttacking = false
-		
 
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("levelWinBox"):
+		levelWon = true
+	if area.is_in_group("torchBoostPickup"):
+		torchBoostPickedUp.emit()

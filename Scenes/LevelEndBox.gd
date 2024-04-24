@@ -11,6 +11,9 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_body_entered(body: CharacterBody2D) -> void:
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	winLevel.emit()
+	print("a")
+
+func _on_body_entered(body):
 	print("a")
