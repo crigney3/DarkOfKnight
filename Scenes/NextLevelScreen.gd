@@ -22,11 +22,12 @@ func _process(delta):
 	pass
 
 func loadNextLevel():
-	get_node(str("/root/Main/Level", currentLevel)).free()
+	get_node("/root/Main/Level1").free()
 	currentLevel += 1
 	nextLevel += 1
 	nextLevelUI.set_visible(false)
-	get_tree().root.add_child(nextLevelPreloaded)
+	get_tree().root.get_child(0).add_child(nextLevelPreloaded)
+	get_node("/root/Main/PlayerScene").setLevelStartPosition(40, 500)
 	if currentLevel == 2:
 		nextLevelPreloaded = preload(level2String).instantiate()
 	elif currentLevel == 3:

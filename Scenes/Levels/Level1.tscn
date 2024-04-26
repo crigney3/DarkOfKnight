@@ -13,4 +13,4 @@ layer_0/tile_data = PackedInt32Array(2293761, 0, 8, 2555905, 0, 10, 2293765, 131
 position = Vector2(1008, 357)
 
 [node name="TorchBoostPickup" parent="." instance=ExtResource("3_hgqgo")]
-position = Vector2(228, 496)
+position = Vector2(228, 461)

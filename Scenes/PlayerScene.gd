@@ -27,7 +27,7 @@ var levelWinUI
 func _ready():
 	screenSize = get_viewport_rect().size
 	show()
-	position = levelStartPos
+	position = Vector2(50, 400)
 	$CollisionShape2D.disabled = false
 	velocity = Vector2.ZERO
 	isAttacking = false
@@ -139,3 +139,9 @@ func _on_torch_boost_picked_up():
 	$Torch/PointLight2D.range_z_max = 1536
 	$Torch/PointLight2D.range_z_min = -1536
 	$Torch/PointLight2D.energy = 2.0
+
+func setLevelStartPosition(x: float, y: float):
+	position = Vector2(x, y)
+	levelWon = false
+	velocity = Vector2.ZERO
+	isAttacking = false

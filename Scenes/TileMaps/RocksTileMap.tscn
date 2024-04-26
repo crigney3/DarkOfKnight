@@ -2471,7 +2471,7 @@ texture = ExtResource("2_rr2mh")
 0:12/0 = 0
 0:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:12/0/physics_layer_0/angular_velocity = 0.0
-0:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.5, -11.5, 31, -12, 31, 24, -26, 22)
+0:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.5, 21.5, 32.5, 22, 31.5, -9.5, -31.5, -9.5)
 0:12/0/physics_layer_0/polygon_0/one_way = true
 4:12/size_in_atlas = Vector2i(4, 4)
 4:12/0 = 0
@@ -2494,6 +2494,7 @@ texture = ExtResource("2_rr2mh")
 
 [sub_resource type="TileSet" id="TileSet_g7815"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_vt5nk")
 sources/1 = SubResource("TileSetAtlasSource_vw588")
 
