@@ -2,41 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
-[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="4_ljw0d"]
+[ext_resource type="PackedScene" uid="uid://nx1c6bf0whpe" path="res://Scenes/Levels/Level1.tscn" id="4_wfvfi"]
+[ext_resource type="PackedScene" uid="uid://bl5rbet4dgcu2" path="res://Scenes/NextLevelScreen.tscn" id="5_8v31a"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
-[ext_resource type="PackedScene" uid="uid://bi7im0wqm4m2o" path="res://Scenes/Levels/Level2.tscn" id="6_w36sl"]
 
 [node name="Main" type="Node"]
 
-[node name="Torch3" parent="." instance=ExtResource("4_ljw0d")]
-visible = false
-z_index = 1
-position = Vector2(476, 270)
-
-[node name="Torch2" parent="." instance=ExtResource("4_ljw0d")]
-visible = false
-z_index = 1
-position = Vector2(309, 357)
-
 [node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
-levelStartPos = Vector2(50, 40)
+levelStartPos = Vector2(50, 400)
 jumpHeight = 140.0
 jumpTimeToPeak = 0.5
 jumpTimeToDescent = 0.35
 
 [node name="ScreenDarkness" parent="." instance=ExtResource("3_saqts")]
 
-[node name="Torch" parent="." instance=ExtResource("4_ljw0d")]
-visible = false
-position = Vector2(46, 240)
-
 [node name="Background" parent="." instance=ExtResource("5_td7ew")]
 z_index = -4
 position = Vector2(579, 353)
 scale = Vector2(19, 14)
 
-[node name="Level2" parent="." instance=ExtResource("6_w36sl")]
+[node name="Level1" parent="." instance=ExtResource("4_wfvfi")]
 
-[editable path="Torch3"]
-[editable path="Torch2"]
-[editable path="Torch"]
+[node name="NextLevelScreen" parent="." groups=["LevelWinUI"] instance=ExtResource("5_8v31a")]
+offset_left = 484.0
+offset_top = 261.0
+offset_right = 484.0
+offset_bottom = 261.0

@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://blqeudr35bygc"]
+[gd_scene load_steps=2 format=3 uid="uid://blqeudr35bygc"]
+
+[ext_resource type="Script" path="res://Scenes/MainMenuUI.gd" id="1_88p7w"]
 
 [node name="Container" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_88p7w")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 2
@@ -20,3 +23,6 @@ text = "Play
 [node name="Button2" type="Button" parent="BoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="BoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BoxContainer/Button2" to="." method="_on_button_2_pressed"]

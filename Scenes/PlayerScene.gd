@@ -21,6 +21,8 @@ var jumpVelocity : float
 var jumpGravity : float
 var fallGravity : float
 
+var levelWinUI
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size
@@ -34,6 +36,8 @@ func _ready():
 	jumpVelocity = ((2.0 * jumpHeight) / jumpTimeToPeak) * -1.0
 	jumpGravity = ((-2.0 * jumpHeight) / (jumpTimeToPeak * jumpTimeToPeak)) * -1.0
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
+	levelWinUI = get_tree().get_first_node_in_group("LevelWinUI")
+	levelWinUI.set_visible(false)
 
 func _physics_process(delta):	
 	velocity.y += get_gravity() * delta
@@ -126,6 +130,7 @@ func _on_animated_sprite_2d_animation_looped():
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("levelWinBox"):
 		levelWon = true
+		levelWinUI.set_visible(true)
 	if area.is_in_group("torchBoostPickup"):
 		torchBoostPickedUp.emit()
 		area.queue_free()
@@ -134,4 +139,3 @@ func _on_torch_boost_picked_up():
 	$Torch/PointLight2D.range_z_max = 1536
 	$Torch/PointLight2D.range_z_min = -1536
 	$Torch/PointLight2D.energy = 2.0
-	print("a")

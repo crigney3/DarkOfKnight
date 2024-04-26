@@ -1,8 +1,12 @@
-[gd_scene format=3 uid="uid://bl5rbet4dgcu2"]
+[gd_scene load_steps=3 format=3 uid="uid://bl5rbet4dgcu2"]
+
+[ext_resource type="Script" path="res://Scenes/NextLevelScreen.gd" id="1_o1beb"]
+[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="2_60eah"]
 
 [node name="NextLevelScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_o1beb")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -23,3 +27,11 @@ fit_content = true
 [node name="Button" type="Button" parent="PanelContainer/BoxContainer"]
 layout_mode = 2
 text = "Next Level"
+
+[node name="Torch" parent="." instance=ExtResource("2_60eah")]
+position = Vector2(8, 20)
+
+[node name="Torch2" parent="." instance=ExtResource("2_60eah")]
+position = Vector2(135, 20)
+
+[connection signal="pressed" from="PanelContainer/BoxContainer/Button" to="." method="_on_button_pressed"]
