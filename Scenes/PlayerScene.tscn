@@ -171,6 +171,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_r4r11")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qn0j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m25br")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_p7cdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ntde8")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1ww5b")
+}],
+"loop": true,
+"name": &"idle_hurt",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("26_d83g8")
 }],
 "loop": true,
@@ -188,6 +220,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("28_gjp41")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gjp41")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": true,
 "name": &"take_damage",
@@ -231,7 +272,6 @@ animations = [{
 collision_layer = 3
 collision_mask = 29
 script = ExtResource("1_5doip")
-levelStartPos = Vector2(0, 20)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -240,8 +280,9 @@ shape = SubResource("RectangleShape2D_1ddwg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tikq0")
-animation = &"win"
-frame_progress = 0.220307
+animation = &"idle_hurt"
+frame = 3
+frame_progress = 0.0284077
 
 [node name="Torch" parent="." instance=ExtResource("35_isvhf")]
 
@@ -262,6 +303,7 @@ collision_mask = 29
 position = Vector2(-2, -6)
 shape = SubResource("RectangleShape2D_1ddwg")
 
+[connection signal="getHurtByTrapOrFalling" from="." to="." method="_on_get_hurt_by_trap_or_falling"]
 [connection signal="torchBoostPickedUp" from="." to="." method="_on_torch_boost_picked_up"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

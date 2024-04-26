@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var walkSpeed = 200
 var screenSize
 var isAttacking
+var isHurt
+var hurtCooldown
+var currentHurtDuration
 var levelWon
 signal getHitByEnemy
 signal loseLevel
@@ -12,7 +15,7 @@ signal torchBoostPickedUp
 var lastFrameVelocity : Vector2
 var health
 var collision
-@export var levelStartPos = Vector2.ZERO
+var levelStartPos = Vector2.ZERO
 @export var jumpHeight : float
 @export var jumpTimeToPeak : float
 @export var jumpTimeToDescent : float
@@ -28,6 +31,7 @@ func _ready():
 	screenSize = get_viewport_rect().size
 	show()
 	position = Vector2(50, 400)
+	levelStartPos = position
 	$CollisionShape2D.disabled = false
 	velocity = Vector2.ZERO
 	isAttacking = false
@@ -38,12 +42,14 @@ func _ready():
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
 	levelWinUI = get_tree().get_first_node_in_group("LevelWinUI")
 	levelWinUI.set_visible(false)
+	hurtCooldown = 2.0
+	currentHurtDuration = 0.0
 
-func _physics_process(delta):	
+func _physics_process(delta):		
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * walkSpeed
 	
-	if Input.is_action_just_pressed("Jump") and is_on_floor() and !levelWon:
+	if Input.is_action_just_pressed("Jump") and is_on_floor() and !levelWon and !isHurt:
 		jump()
 		
 	move_and_slide()
@@ -51,6 +57,15 @@ func _physics_process(delta):
 	if levelWon:
 		$AnimatedSprite2D.animation = "win"
 		$AnimatedSprite2D.play()
+		return
+		
+	if isHurt:
+		$AnimatedSprite2D.animation = "idle_hurt"
+		$AnimatedSprite2D.play()
+		currentHurtDuration += delta
+		if currentHurtDuration >= hurtCooldown:
+			isHurt = false
+		
 		return
 	
 	if !isAttacking:
@@ -97,7 +112,7 @@ func get_input_velocity() -> float:
 		horizontal += 1.0
 	if Input.is_action_pressed("moveLeft"):
 		horizontal -= 1.0
-	if !levelWon:
+	if !levelWon and !isHurt:
 		return horizontal
 	else:
 		return 0.0
@@ -110,17 +125,7 @@ func _process(delta):
 		$Torch/PointLight2D.energy -= 0.2 * delta
 
 func _on_body_entered(body):
-	if body.is_in_group("enemies"):
-		health -= 1
-		getHitByEnemy.emit()
-	elif body.is_in_group("pitOrTrap"):
-		health -= 1
-		getHurtByTrapOrFalling.emit()
-
-	if health <= 0:
-		hide()
-		loseLevel.emit()
-		$CollisionShape2D.set_deferred("disabled", true)
+	pass
 
 
 func _on_animated_sprite_2d_animation_looped():
@@ -134,6 +139,18 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("torchBoostPickup"):
 		torchBoostPickedUp.emit()
 		area.queue_free()
+	
+	if area.is_in_group("enemies"):
+		health -= 1
+		getHitByEnemy.emit()
+	elif area.is_in_group("pitOrTrap"):
+		health -= 1
+		getHurtByTrapOrFalling.emit()
+		
+	if health <= 0:
+		hide()
+		loseLevel.emit()
+		#$CollisionShape2D.set_deferred("disabled", true)
 
 func _on_torch_boost_picked_up():
 	$Torch/PointLight2D.range_z_max = 1536
@@ -145,3 +162,9 @@ func setLevelStartPosition(x: float, y: float):
 	levelWon = false
 	velocity = Vector2.ZERO
 	isAttacking = false
+	levelStartPos = Vector2(x, y)
+
+
+func _on_get_hurt_by_trap_or_falling():
+	position = levelStartPos
+	isHurt = true

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmo03s36ng8m5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x745l"]
+size = Vector2(1163, 94)
+
+[node name="FallBox" type="Area2D" groups=["FallBox", "pitOrTrap"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(571.5, 37)
+shape = SubResource("RectangleShape2D_x745l")

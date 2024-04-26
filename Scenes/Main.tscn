@@ -9,14 +9,15 @@
 [node name="Main" type="Node"]
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
-levelStartPos = Vector2(50, 400)
 jumpHeight = 140.0
 jumpTimeToPeak = 0.5
 jumpTimeToDescent = 0.35
 
 [node name="ScreenDarkness" parent="." instance=ExtResource("3_saqts")]
+visible = false
 
 [node name="Background" parent="." instance=ExtResource("5_td7ew")]
+visible = false
 z_index = -4
 position = Vector2(579, 353)
 scale = Vector2(19, 14)

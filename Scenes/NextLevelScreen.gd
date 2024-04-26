@@ -27,7 +27,7 @@ func loadNextLevel():
 	nextLevel += 1
 	nextLevelUI.set_visible(false)
 	get_tree().root.get_child(0).add_child(nextLevelPreloaded)
-	get_node("/root/Main/PlayerScene").setLevelStartPosition(40, 500)
+	get_node("/root/Main/PlayerScene").setLevelStartPosition(50, 400)
 	if currentLevel == 2:
 		nextLevelPreloaded = preload(level2String).instantiate()
 	elif currentLevel == 3:
