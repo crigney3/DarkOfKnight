@@ -246,6 +246,7 @@ frame_progress = 0.220307
 [node name="Torch" parent="." instance=ExtResource("35_isvhf")]
 
 [node name="PointLight2D" parent="Torch" index="0"]
+scale = Vector2(1.5, 1.5)
 energy = 0.3
 range_z_min = -512
 range_z_max = 512

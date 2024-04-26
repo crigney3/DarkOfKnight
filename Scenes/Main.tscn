@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=6 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
-[ext_resource type="PackedScene" uid="uid://ktfwpjvcep76" path="res://Scenes/Platform.tscn" id="2_rbue6"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
 [ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="4_ljw0d"]
+[ext_resource type="PackedScene" uid="uid://nx1c6bf0whpe" path="res://Scenes/Levels/Level1.tscn" id="5_rjni5"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
-[ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="6_syeam"]
-[ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="7_knnmm"]
 
 [node name="Main" type="Node"]
 
@@ -26,15 +24,6 @@ jumpHeight = 140.0
 jumpTimeToPeak = 0.5
 jumpTimeToDescent = 0.35
 
-[node name="Platform" parent="." instance=ExtResource("2_rbue6")]
-position = Vector2(101, 273)
-
-[node name="Platform2" parent="." instance=ExtResource("2_rbue6")]
-position = Vector2(256, 370)
-
-[node name="Platform3" parent="." instance=ExtResource("2_rbue6")]
-position = Vector2(478, 298)
-
 [node name="ScreenDarkness" parent="." instance=ExtResource("3_saqts")]
 
 [node name="Torch" parent="." instance=ExtResource("4_ljw0d")]
@@ -46,13 +35,7 @@ z_index = -4
 position = Vector2(579, 353)
 scale = Vector2(19, 14)
 
-[node name="LevelEndBox" parent="." instance=ExtResource("6_syeam")]
-z_index = -1
-position = Vector2(517, 251)
-collision_layer = 8
-
-[node name="TorchBoostPickup" parent="." instance=ExtResource("7_knnmm")]
-position = Vector2(222, 307)
+[node name="Level1" parent="." instance=ExtResource("5_rjni5")]
 
 [editable path="Torch3"]
 [editable path="Torch2"]
