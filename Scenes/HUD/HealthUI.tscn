@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c14e85ifq264o"]
 
-[ext_resource type="Texture2D" uid="uid://cra84jghvkfyo" path="res://KnightAssets/Tiny Swords (Update 010)/Resources/Resources/Meat_cropped.png" id="1_05l72"]
+[ext_resource type="Texture2D" uid="uid://c8b1vswpuow7y" path="res://KnightAssets/HealthIcon.png" id="1_dm6cb"]
 
 [node name="HealthUi" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="BoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_05l72")
+texture = ExtResource("1_dm6cb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="BoxContainer"]
 clip_contents = false
