@@ -26,6 +26,7 @@ var jumpGravity : float
 var fallGravity : float
 
 var levelWinUI
+var levelLoseUI
 
 var torchesArray = []
 
@@ -45,7 +46,9 @@ func _ready():
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
 	levelWinUI = get_tree().get_first_node_in_group("LevelWinUI")
 	levelWinUI.set_visible(false)
-	hurtCooldown = 2.0
+	levelLoseUI = get_tree().get_first_node_in_group("LevelLoseUI")
+	levelLoseUI.set_visible(false)
+	hurtCooldown = 1.0
 	currentHurtDuration = 0.0
 
 func _physics_process(delta):		
@@ -67,6 +70,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play()
 		currentHurtDuration += delta
 		if currentHurtDuration >= hurtCooldown:
+			currentHurtDuration = 0.0
 			isHurt = false
 		
 		return
@@ -168,6 +172,10 @@ func setLevelStartPosition(x: float, y: float):
 	levelStartPos = Vector2(x, y)
 	torchesArray.clear()
 	health = 3
+	levelLoseUI.set_visible(false)
+	isHurt = false
+	show()
+	get_node("/root/Main/CanvasLayer/HealthUi").get_child(0).get_child(1).text = str(":   ", health)
 
 
 func _on_get_hurt_by_trap_or_falling():
@@ -181,3 +189,7 @@ func _on_get_hurt_by_trap_or_falling():
 func _on_lose_health_and_update_ui():
 	health -= 1
 	get_node("/root/Main/CanvasLayer/HealthUi").get_child(0).get_child(1).text = str(":   ", health)
+
+
+func _on_lose_level():
+	levelLoseUI.set_visible(true)

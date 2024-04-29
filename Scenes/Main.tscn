@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=8 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl5rbet4dgcu2" path="res://Scenes/HUD/NextLevelScreen.tscn" id="5_pe4do"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
 [ext_resource type="PackedScene" uid="uid://c14e85ifq264o" path="res://Scenes/HUD/HealthUI.tscn" id="6_5kb3f"]
+[ext_resource type="PackedScene" uid="uid://bbovortfrgk2i" path="res://Scenes/HUD/LoseScreen.tscn" id="7_xv7fu"]
 
 [node name="Main" type="Node"]
 
@@ -41,3 +42,12 @@ offset_bottom = 261.0
 light_mask = 2
 visibility_layer = 2
 z_index = 2
+
+[node name="LoseScreen" parent="." groups=["LevelLoseUI"] instance=ExtResource("7_xv7fu")]
+z_index = 2
+offset_left = 472.0
+offset_top = 258.0
+offset_right = 472.0
+offset_bottom = 258.0
+
+[connection signal="loseLevel" from="PlayerScene" to="PlayerScene" method="_on_lose_level"]
