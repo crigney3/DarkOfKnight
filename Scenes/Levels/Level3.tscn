@@ -1,16 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1r5yhqjlnyf7"]
+[gd_scene load_steps=5 format=3 uid="uid://d1r5yhqjlnyf7"]
 
+[ext_resource type="PackedScene" uid="uid://c3miqdg0hsmkr" path="res://Scenes/Spikes.tscn" id="1_8m068"]
 [ext_resource type="PackedScene" uid="uid://cki6cf2s42y4w" path="res://Scenes/TileMaps/RocksTileMap.tscn" id="1_qcmxi"]
 [ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="2_0176y"]
 [ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="3_lhnfk"]
 
 [node name="Level1" type="Node2D"]
 
+[node name="Spikes3" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(547, 310)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spikes2" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(591, 312)
+scale = Vector2(1.5, 1.5)
+
 [node name="RocksTileMap" parent="." instance=ExtResource("1_qcmxi")]
-layer_0/tile_data = PackedInt32Array(2293761, 0, 8, 2555905, 0, 10, 2293765, 131072, 8, 2555909, 131072, 10, 2293769, 262144, 8, 2555913, 262144, 10, 2293778, 0, 8, 2293782, 131072, 8, 2293786, 262144, 8, 2555922, 0, 10, 2555926, 131072, 10, 2555930, 262144, 10, 2031650, 0, 8, 2031654, 131072, 8, 2031658, 262144, 8, 2293794, 0, 10, 2490402, 0, 10, 2293798, 131072, 10, 2490406, 131072, 10, 2293802, 262144, 10, 2490410, 262144, 10, 2097204, 393216, 8, 2359348, 393216, 10, 2555956, 393216, 10, 1572920, 0, 8, 1835064, 0, 10, 2031672, 0, 10, 2228280, 0, 10, 2424888, 0, 10, 2621496, 0, 10, 1572924, 131072, 8, 1572928, 262144, 8, 1835068, 131072, 10, 2031676, 131072, 10, 2228284, 131072, 10, 2424892, 131072, 10, 2621500, 131072, 10, 1835072, 262144, 10, 2031680, 262144, 10, 2228288, 262144, 10, 2424896, 262144, 10, 2621504, 262144, 10)
+layer_0/tile_data = PackedInt32Array(2555905, 0, 10, 2555909, 131072, 10, 2293769, 262144, 8, 2555913, 262144, 10, 2293761, 0, 8, 2293765, 131072, 8, 2162706, 0, 8, 2162710, 131072, 8, 2162714, 262144, 8, 2424850, 0, 10, 2621458, 0, 10, 2424854, 131072, 10, 2621462, 131072, 10, 2424858, 262144, 10, 2621466, 262144, 10, 2293831, 262144, 8, 2293827, 131072, 8, 2293823, 0, 8, 2555967, 0, 10, 2555971, 131072, 10, 2555975, 262144, 10, 2555963, 393216, 10, 2359355, 393216, 10, 2162747, 393216, 10, 1966139, 393216, 10, 1769531, 393216, 10, 1572923, 393216, 10, 1376315, 393216, 10, 1179707, 393216, 10, 983099, 393216, 10, 786491, 393216, 10, 589883, 393216, 10, 327739, 393216, 8, 2424869, 1, 12, 2424873, 524289, 12, 2162735, 1, 12, 2162739, 524289, 12, 1703991, 1, 12, 1310741, 786433, 12, 1310753, 262145, 12, 1310757, 262145, 12, 1310761, 262145, 12, 1310765, 262145, 12, 1310769, 524289, 12, 1310749, 1, 12)
 
 [node name="LevelEndBox" parent="." instance=ExtResource("2_0176y")]
-position = Vector2(1008, 357)
+position = Vector2(1091, 532)
 
 [node name="TorchBoostPickup" parent="." instance=ExtResource("3_lhnfk")]
-position = Vector2(228, 496)
+position = Vector2(263, 486)
+
+[node name="Spikes" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(724, 314)
+scale = Vector2(1.5, 1.5)
+
+[node name="TorchBoostPickup2" parent="." instance=ExtResource("3_lhnfk")]
+position = Vector2(340, 267)

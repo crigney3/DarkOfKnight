@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3vcr31a350cy"]
+
+[ext_resource type="PackedScene" uid="uid://c3miqdg0hsmkr" path="res://Scenes/Spikes.tscn" id="1_j64au"]
+[ext_resource type="PackedScene" uid="uid://cki6cf2s42y4w" path="res://Scenes/TileMaps/RocksTileMap.tscn" id="2_tp88b"]
+[ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="3_n3oho"]
+[ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="4_c4qet"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Spikes3" parent="." instance=ExtResource("1_j64au")]
+position = Vector2(574, 358)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spikes2" parent="." instance=ExtResource("1_j64au")]
+position = Vector2(618, 360)
+scale = Vector2(1.5, 1.5)
+
+[node name="RocksTileMap" parent="." instance=ExtResource("2_tp88b")]
+layer_0/tile_data = PackedInt32Array(2555905, 0, 10, 2555909, 131072, 10, 2293769, 262144, 8, 2555913, 262144, 10, 2293761, 0, 8, 2293765, 131072, 8, 2162706, 0, 8, 2162710, 131072, 8, 2162714, 262144, 8, 2424850, 0, 10, 2621458, 0, 10, 2424854, 131072, 10, 2621462, 131072, 10, 2424858, 262144, 10, 2621466, 262144, 10, 2293831, 262144, 8, 2293827, 131072, 8, 2293823, 0, 8, 2555967, 0, 10, 2555971, 131072, 10, 2555975, 262144, 10, 2555963, 393216, 10, 2359355, 393216, 10, 2162747, 393216, 10, 1966139, 393216, 10, 1769531, 393216, 10, 1572923, 393216, 10, 1376315, 393216, 10, 1179707, 393216, 10, 983099, 393216, 10, 786491, 393216, 10, 589883, 393216, 10, 327739, 393216, 8, 2424869, 1, 12, 2424873, 524289, 12, 2162735, 1, 12, 2162739, 524289, 12, 1703991, 1, 12, 1507377, 524289, 12, 1507373, 262145, 12, 1507369, 262145, 12, 1507365, 262145, 12, 1507361, 262145, 12, 1507357, 1, 12, 1310741, 786433, 12)
+
+[node name="LevelEndBox" parent="." instance=ExtResource("3_n3oho")]
+position = Vector2(1091, 532)
+
+[node name="TorchBoostPickup" parent="." instance=ExtResource("4_c4qet")]
+position = Vector2(263, 486)
+
+[node name="Spikes" parent="." instance=ExtResource("1_j64au")]
+position = Vector2(751, 362)
+scale = Vector2(1.5, 1.5)
+
+[node name="TorchBoostPickup2" parent="." instance=ExtResource("4_c4qet")]
+position = Vector2(340, 267)

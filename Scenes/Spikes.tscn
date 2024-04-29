@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3miqdg0hsmkr"]
+
+[ext_resource type="Texture2D" uid="uid://c7qtjimeoyvak" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/15.png" id="1_juh80"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0ff1"]
+height = 25.2965
+
+[node name="Spikes" type="Area2D" groups=["pitOrTrap"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+rotation = 0.333275
+shape = SubResource("CapsuleShape2D_r0ff1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_juh80")

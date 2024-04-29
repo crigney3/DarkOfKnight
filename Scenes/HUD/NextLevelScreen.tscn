@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl5rbet4dgcu2"]
 
-[ext_resource type="Script" path="res://Scenes/NextLevelScreen.gd" id="1_o1beb"]
+[ext_resource type="Script" path="res://Scenes/HUD/NextLevelScreen.gd" id="1_o1beb"]
 [ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="2_60eah"]
 
 [node name="NextLevelScreen" type="Control"]

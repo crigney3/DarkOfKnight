@@ -304,6 +304,7 @@ position = Vector2(-2, -6)
 shape = SubResource("RectangleShape2D_1ddwg")
 
 [connection signal="getHurtByTrapOrFalling" from="." to="." method="_on_get_hurt_by_trap_or_falling"]
+[connection signal="loseHealthAndUpdateUI" from="." to="." method="_on_lose_health_and_update_ui"]
 [connection signal="torchBoostPickedUp" from="." to="." method="_on_torch_boost_picked_up"]
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

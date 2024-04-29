@@ -12,6 +12,7 @@ signal loseLevel
 signal attack
 signal getHurtByTrapOrFalling
 signal torchBoostPickedUp
+signal loseHealthAndUpdateUI
 var lastFrameVelocity : Vector2
 var health
 var collision
@@ -25,6 +26,8 @@ var jumpGravity : float
 var fallGravity : float
 
 var levelWinUI
+
+var torchesArray = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -138,13 +141,13 @@ func _on_area_2d_area_entered(area):
 		levelWinUI.set_visible(true)
 	if area.is_in_group("torchBoostPickup"):
 		torchBoostPickedUp.emit()
-		area.queue_free()
+		torchesArray.append(area)
+		area.get_node("CollisionShape2D").set_deferred("disabled", true)
+		area.get_node("Torch").visible = false
 	
 	if area.is_in_group("enemies"):
-		health -= 1
 		getHitByEnemy.emit()
 	elif area.is_in_group("pitOrTrap"):
-		health -= 1
 		getHurtByTrapOrFalling.emit()
 		
 	if health <= 0:
@@ -163,8 +166,18 @@ func setLevelStartPosition(x: float, y: float):
 	velocity = Vector2.ZERO
 	isAttacking = false
 	levelStartPos = Vector2(x, y)
+	torchesArray.clear()
+	health = 3
 
 
 func _on_get_hurt_by_trap_or_falling():
 	position = levelStartPos
 	isHurt = true
+	loseHealthAndUpdateUI.emit()
+	for torch in torchesArray:
+		torch.get_node("CollisionShape2D").set_deferred("disabled", false)
+		torch.get_node("Torch").visible = true
+
+func _on_lose_health_and_update_ui():
+	health -= 1
+	get_node("/root/Main/CanvasLayer/HealthUi").get_child(0).get_child(1).text = str(":   ", health)

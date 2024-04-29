@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=7 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
 [ext_resource type="PackedScene" uid="uid://nx1c6bf0whpe" path="res://Scenes/Levels/Level1.tscn" id="4_wfvfi"]
-[ext_resource type="PackedScene" uid="uid://bl5rbet4dgcu2" path="res://Scenes/NextLevelScreen.tscn" id="5_8v31a"]
+[ext_resource type="PackedScene" uid="uid://bl5rbet4dgcu2" path="res://Scenes/HUD/NextLevelScreen.tscn" id="5_pe4do"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
+[ext_resource type="PackedScene" uid="uid://c14e85ifq264o" path="res://Scenes/HUD/HealthUI.tscn" id="6_5kb3f"]
 
 [node name="Main" type="Node"]
+
+[node name="CanvasModulate2" type="CanvasModulate" parent="."]
+show_behind_parent = true
+color = Color(0, 0, 0, 1)
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
 jumpHeight = 140.0
@@ -15,17 +20,24 @@ jumpTimeToDescent = 0.35
 
 [node name="ScreenDarkness" parent="." instance=ExtResource("3_saqts")]
 visible = false
+z_index = 1
 
 [node name="Background" parent="." instance=ExtResource("5_td7ew")]
-visible = false
 z_index = -4
 position = Vector2(579, 353)
 scale = Vector2(19, 14)
 
 [node name="Level1" parent="." instance=ExtResource("4_wfvfi")]
 
-[node name="NextLevelScreen" parent="." groups=["LevelWinUI"] instance=ExtResource("5_8v31a")]
+[node name="NextLevelScreen" parent="." groups=["LevelWinUI"] instance=ExtResource("5_pe4do")]
 offset_left = 484.0
 offset_top = 261.0
 offset_right = 484.0
 offset_bottom = 261.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUi" parent="CanvasLayer" instance=ExtResource("6_5kb3f")]
+light_mask = 2
+visibility_layer = 2
+z_index = 2
