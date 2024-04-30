@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1r5yhqjlnyf7"]
+[gd_scene load_steps=16 format=3 uid="uid://d1r5yhqjlnyf7"]
 
 [ext_resource type="PackedScene" uid="uid://c3miqdg0hsmkr" path="res://Scenes/Spikes.tscn" id="1_8m068"]
 [ext_resource type="PackedScene" uid="uid://cki6cf2s42y4w" path="res://Scenes/TileMaps/RocksTileMap.tscn" id="1_qcmxi"]
@@ -6,8 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="3_lhnfk"]
 [ext_resource type="Texture2D" uid="uid://cw4imx8x82nnk" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/16.png" id="5_ot5jw"]
 [ext_resource type="PackedScene" uid="uid://cmo03s36ng8m5" path="res://Scenes/FallBox.tscn" id="6_jc5i2"]
+[ext_resource type="Texture2D" uid="uid://5t1hcs36tpbc" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/06.png" id="7_cravd"]
+[ext_resource type="Texture2D" uid="uid://dij62lkr5d44a" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/04.png" id="8_5d6kd"]
+[ext_resource type="Texture2D" uid="uid://bxa1vuk450hty" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/05.png" id="9_5lxx5"]
+[ext_resource type="Texture2D" uid="uid://c5dh3o2ysqgqb" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/09.png" id="10_cb5mp"]
+[ext_resource type="Texture2D" uid="uid://do6y3jqkctc63" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/08.png" id="11_b0j03"]
+[ext_resource type="Texture2D" uid="uid://bop8d6s4v6gke" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/07.png" id="12_1j1fo"]
+[ext_resource type="Texture2D" uid="uid://diwfddq7rfmtv" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/11.png" id="13_3pkv4"]
+[ext_resource type="Texture2D" uid="uid://b0xkx00iatjis" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/03.png" id="14_dd1mc"]
+[ext_resource type="Texture2D" uid="uid://bv2v0tx14aiup" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/01.png" id="15_i0t5n"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="TorchBoostPickup3" parent="." instance=ExtResource("3_lhnfk")]
+position = Vector2(516, 38)
+
+[node name="Spikes7" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(1017, 360)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spikes5" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(620, 76)
+scale = Vector2(1.5, 1.5)
 
 [node name="Spikes3" parent="." instance=ExtResource("1_8m068")]
 position = Vector2(568, 298)
@@ -18,7 +38,7 @@ position = Vector2(612, 298)
 scale = Vector2(1.5, 1.5)
 
 [node name="RocksTileMap" parent="." instance=ExtResource("1_qcmxi")]
-layer_0/tile_data = PackedInt32Array(2555905, 0, 10, 2555909, 131072, 10, 2293769, 262144, 8, 2555913, 262144, 10, 2293761, 0, 8, 2293765, 131072, 8, 2162706, 0, 8, 2162710, 131072, 8, 2162714, 262144, 8, 2424850, 0, 10, 2621458, 0, 10, 2424854, 131072, 10, 2621462, 131072, 10, 2424858, 262144, 10, 2621466, 262144, 10, 2293831, 262144, 8, 2293827, 131072, 8, 2293823, 0, 8, 2555967, 0, 10, 2555971, 131072, 10, 2555975, 262144, 10, 2555963, 393216, 10, 2359355, 393216, 10, 2162747, 393216, 10, 1966139, 393216, 10, 1769531, 393216, 10, 1572923, 393216, 10, 1376315, 393216, 10, 1179707, 393216, 10, 983099, 393216, 10, 786491, 393216, 10, 589883, 393216, 10, 327739, 393216, 8, 2424869, 1, 12, 2424873, 524289, 12, 2162735, 1, 12, 2162739, 524289, 12, 1703991, 1, 12, 1310741, 786433, 12, 1245214, 1, 12, 1245218, 262145, 12, 1245222, 262145, 12, 1245226, 262145, 12, 1245230, 262145, 12, 1245234, 524289, 12)
+layer_0/tile_data = PackedInt32Array(2555905, 0, 10, 2555909, 131072, 10, 2293769, 262144, 8, 2555913, 262144, 10, 2293761, 0, 8, 2293765, 131072, 8, 2162706, 0, 8, 2162710, 131072, 8, 2162714, 262144, 8, 2424850, 0, 10, 2621458, 0, 10, 2424854, 131072, 10, 2621462, 131072, 10, 2424858, 262144, 10, 2621466, 262144, 10, 2293831, 262144, 8, 2293827, 131072, 8, 2293823, 0, 8, 2555967, 0, 10, 2555971, 131072, 10, 2555975, 262144, 10, 2555963, 393216, 10, 2359355, 393216, 10, 2162747, 393216, 10, 1966139, 393216, 10, 1769531, 393216, 10, 1572923, 393216, 10, 1376315, 393216, 10, 1179707, 393216, 10, 983099, 393216, 10, 786491, 393216, 10, 589883, 393216, 10, 327739, 393216, 8, 2424869, 1, 12, 2424873, 524289, 12, 2162735, 1, 12, 2162739, 524289, 12, 1703991, 1, 12, 1310741, 786433, 12, 1245214, 1, 12, 1245218, 262145, 12, 1245222, 262145, 12, 1245226, 262145, 12, 1245230, 262145, 12, 1245234, 524289, 12, 2228223, 393216, 10, 2031615, 393216, 10, 1835007, 393216, 10, 1638399, 393216, 10, 1441791, 393216, 10, 1245183, 393216, 10, 1048575, 393216, 10, 851967, 393216, 10, 655359, 393216, 10, 458751, 393216, 10, 262143, 393216, 10, 65535, 393216, 10, 786435, 131072, 8, 786439, 262144, 8, 1048583, 262144, 10, 1048587, 262144, 8, 1310731, 262144, 10, 1048579, 131072, 10, 524304, 1, 12, 524308, 262145, 12, 524312, 524289, 12, 327711, 1, 12, 327715, 262145, 12, 327719, 262145, 12, 327723, 262145, 12, 327727, 262145, 12, 327731, 524289, 12, 2555979, 393216, 10, 2359371, 393216, 10, 2162763, 393216, 10, 1966155, 393216, 10, 1769547, 393216, 10, 1572939, 393216, 10, 1376331, 393216, 10, 1179723, 393216, 10, 983115, 393216, 10, 786507, 393216, 10, 589899, 393216, 10, 393291, 393216, 10, 196683, 393216, 10, 75, 393216, 10, 1507391, 524289, 12, 1507399, 1, 12)
 
 [node name="LevelEndBox" parent="." instance=ExtResource("2_0176y")]
 position = Vector2(1091, 532)
@@ -40,3 +60,64 @@ texture = ExtResource("5_ot5jw")
 [node name="FallBox" parent="Sprite2D" instance=ExtResource("6_jc5i2")]
 position = Vector2(-866, 384)
 scale = Vector2(1.20474, 0.833058)
+
+[node name="Spikes4" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(577, 74)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spikes6" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(660, 76)
+scale = Vector2(1.5, 1.5)
+
+[node name="Spikes8" parent="." instance=ExtResource("1_8m068")]
+position = Vector2(1139, 363)
+scale = Vector2(1.5, 1.5)
+
+[node name="TorchBoostPickup4" parent="." instance=ExtResource("3_lhnfk")]
+position = Vector2(1081, 365)
+
+[node name="06" type="Sprite2D" parent="."]
+position = Vector2(327, 510)
+texture = ExtResource("7_cravd")
+
+[node name="04" type="Sprite2D" parent="."]
+position = Vector2(29, 587)
+texture = ExtResource("8_5d6kd")
+
+[node name="05" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(123, 577)
+texture = ExtResource("9_5lxx5")
+
+[node name="09" type="Sprite2D" parent="."]
+position = Vector2(373, 105)
+texture = ExtResource("10_cb5mp")
+
+[node name="08" type="Sprite2D" parent="."]
+position = Vector2(327, 115)
+texture = ExtResource("11_b0j03")
+
+[node name="07" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(361, 147)
+texture = ExtResource("12_1j1fo")
+
+[node name="11" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(392, 138)
+texture = ExtResource("13_3pkv4")
+
+[node name="03" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(64, 206)
+texture = ExtResource("14_dd1mc")
+
+[node name="10" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(623, 601)
+texture = ExtResource("10_cb5mp")
+
+[node name="01" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(90, 214)
+texture = ExtResource("15_i0t5n")

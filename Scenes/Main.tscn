@@ -15,6 +15,7 @@ show_behind_parent = true
 color = Color(0, 0, 0, 1)
 
 [node name="PlayerScene" parent="." instance=ExtResource("1_06qn3")]
+z_index = 1
 jumpHeight = 140.0
 jumpTimeToPeak = 0.5
 jumpTimeToDescent = 0.35
@@ -25,12 +26,12 @@ z_index = 1
 
 [node name="Background" parent="." instance=ExtResource("5_td7ew")]
 z_index = -4
-position = Vector2(579, 353)
-scale = Vector2(19, 14)
+position = Vector2(1, -1)
 
 [node name="Level1" parent="." instance=ExtResource("4_wfvfi")]
 
 [node name="NextLevelScreen" parent="." groups=["LevelWinUI"] instance=ExtResource("5_pe4do")]
+z_index = 4
 offset_left = 484.0
 offset_top = 261.0
 offset_right = 484.0
@@ -44,7 +45,7 @@ visibility_layer = 2
 z_index = 2
 
 [node name="LoseScreen" parent="." groups=["LevelLoseUI"] instance=ExtResource("7_xv7fu")]
-z_index = 2
+z_index = 4
 offset_left = 472.0
 offset_top = 258.0
 offset_right = 472.0

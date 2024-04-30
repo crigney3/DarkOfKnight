@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi7im0wqm4m2o"]
+[gd_scene load_steps=14 format=3 uid="uid://bi7im0wqm4m2o"]
 
 [ext_resource type="PackedScene" uid="uid://cki6cf2s42y4w" path="res://Scenes/TileMaps/RocksTileMap.tscn" id="1_bvm03"]
 [ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="2_lxvyq"]
 [ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="3_kehrv"]
 [ext_resource type="PackedScene" uid="uid://cmo03s36ng8m5" path="res://Scenes/FallBox.tscn" id="4_1is07"]
+[ext_resource type="Texture2D" uid="uid://5t1hcs36tpbc" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/06.png" id="5_rrkjc"]
+[ext_resource type="Texture2D" uid="uid://c5dh3o2ysqgqb" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/09.png" id="6_elr63"]
+[ext_resource type="Texture2D" uid="uid://dij62lkr5d44a" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/04.png" id="7_b03ej"]
+[ext_resource type="Texture2D" uid="uid://bxa1vuk450hty" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/05.png" id="8_6oyqg"]
+[ext_resource type="Texture2D" uid="uid://diwfddq7rfmtv" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/11.png" id="9_oqpec"]
+[ext_resource type="Texture2D" uid="uid://do6y3jqkctc63" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/08.png" id="10_dbs2v"]
+[ext_resource type="Texture2D" uid="uid://bw7ii5hln0mdl" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/02.png" id="11_mtnk7"]
+[ext_resource type="Texture2D" uid="uid://bv2v0tx14aiup" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/01.png" id="12_0xo0e"]
+[ext_resource type="Texture2D" uid="uid://cvg73d74q6rl6" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/10.png" id="13_ufmnw"]
 
 [node name="Level1" type="Node2D"]
 
@@ -21,3 +30,54 @@ position = Vector2(585, 284)
 
 [node name="FallBox" parent="." instance=ExtResource("4_1is07")]
 position = Vector2(20, 637)
+
+[node name="06" type="Sprite2D" parent="."]
+position = Vector2(874, 549)
+texture = ExtResource("5_rrkjc")
+
+[node name="09" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(915, 383)
+texture = ExtResource("6_elr63")
+
+[node name="04" type="Sprite2D" parent="."]
+position = Vector2(99, 558)
+texture = ExtResource("7_b03ej")
+
+[node name="05" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(218, 591)
+texture = ExtResource("8_6oyqg")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(415, 106)
+texture = ExtResource("9_oqpec")
+
+[node name="08" type="Sprite2D" parent="."]
+position = Vector2(239, 315)
+texture = ExtResource("10_dbs2v")
+
+[node name="02" type="Sprite2D" parent="."]
+position = Vector2(487, 580)
+texture = ExtResource("11_mtnk7")
+
+[node name="01" type="Sprite2D" parent="."]
+position = Vector2(468, 586)
+texture = ExtResource("12_0xo0e")
+
+[node name="10" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(677, 351)
+texture = ExtResource("13_ufmnw")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(393, 109)
+texture = ExtResource("13_ufmnw")
+
+[node name="07" type="Sprite2D" parent="."]
+position = Vector2(609, 35)
+texture = ExtResource("5_rrkjc")
+
+[node name="13" type="Sprite2D" parent="."]
+position = Vector2(1100, 157)
+texture = ExtResource("7_b03ej")

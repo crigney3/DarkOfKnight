@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://nx1c6bf0whpe"]
+[gd_scene load_steps=10 format=3 uid="uid://nx1c6bf0whpe"]
 
 [ext_resource type="PackedScene" uid="uid://cki6cf2s42y4w" path="res://Scenes/TileMaps/RocksTileMap.tscn" id="1_txkth"]
 [ext_resource type="PackedScene" uid="uid://vdtdrq7o0dr5" path="res://Scenes/LevelEndBox.tscn" id="2_1ihk5"]
 [ext_resource type="PackedScene" uid="uid://44bfuyymfw6s" path="res://Scenes/TorchBoostPickup.tscn" id="3_hgqgo"]
 [ext_resource type="PackedScene" uid="uid://cmo03s36ng8m5" path="res://Scenes/FallBox.tscn" id="4_r4xop"]
+[ext_resource type="Texture2D" uid="uid://bw7ii5hln0mdl" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/02.png" id="5_d64sw"]
+[ext_resource type="Texture2D" uid="uid://b0xkx00iatjis" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/03.png" id="6_hooga"]
+[ext_resource type="Texture2D" uid="uid://bv2v0tx14aiup" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/01.png" id="7_c53s3"]
+[ext_resource type="Texture2D" uid="uid://5t1hcs36tpbc" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/06.png" id="8_0nkro"]
+[ext_resource type="Texture2D" uid="uid://dij62lkr5d44a" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/04.png" id="9_1yhj5"]
 
 [node name="Level1" type="Node2D"]
 
@@ -18,3 +23,27 @@ position = Vector2(228, 461)
 
 [node name="FallBox" parent="." instance=ExtResource("4_r4xop")]
 position = Vector2(-1, 638)
+
+[node name="02" type="Sprite2D" parent="."]
+position = Vector2(401, 550)
+texture = ExtResource("5_d64sw")
+
+[node name="03" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(28, 569)
+texture = ExtResource("6_hooga")
+
+[node name="01" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(621, 499)
+texture = ExtResource("7_c53s3")
+
+[node name="06" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(955, 405)
+texture = ExtResource("8_0nkro")
+
+[node name="04" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(328, 582)
+texture = ExtResource("9_1yhj5")

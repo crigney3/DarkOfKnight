@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c7qtjimeoyvak" path="res://KnightAssets/Tiny Swords (Update 010)/Deco/15.png" id="1_juh80"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0ff1"]
-radius = 6.94197
+radius = 6.94195
 height = 13.8839
 
 [node name="Spikes" type="Area2D" groups=["pitOrTrap"]]
