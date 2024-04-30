@@ -1,0 +1,13 @@
+Matrixxx - Cartoon Penguin 02 (as jump sound)
+
+qubodup - Swosh Sword Swing (sword swing without hit)
+
+Kreastricon62 - Bloody Blade 2 (sword swing with hit)
+
+hykenfreak - Flame Ignition (torch pickup)
+
+EVRetro - 8-bit damage sound (hurt or fall)
+
+cabled_mess - Lose_C_05 (game over noise)
+
+rhodesmas - Level Up 01 (win level sound)

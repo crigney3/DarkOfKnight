@@ -30,6 +30,14 @@ var levelLoseUI
 
 var torchesArray = []
 
+var jumpSound
+var swordHitSound
+var swordMissSound
+var torchLightSound
+var winSound
+var loseLevelSound
+var takeDamageSound
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screenSize = get_viewport_rect().size
@@ -41,17 +49,34 @@ func _ready():
 	isAttacking = false
 	health = 3
 	levelWon = false
+	
 	jumpVelocity = ((2.0 * jumpHeight) / jumpTimeToPeak) * -1.0
 	jumpGravity = ((-2.0 * jumpHeight) / (jumpTimeToPeak * jumpTimeToPeak)) * -1.0
 	fallGravity = ((-2.0 * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent)) * -1.0
+	
 	levelWinUI = get_tree().get_first_node_in_group("LevelWinUI")
 	levelWinUI.set_visible(false)
 	levelLoseUI = get_tree().get_first_node_in_group("LevelLoseUI")
 	levelLoseUI.set_visible(false)
+	
 	hurtCooldown = 1.0
 	currentHurtDuration = 0.0
+	
+	jumpSound = preload("res://Audio/Jump.wav")
+	swordHitSound = preload("res://Audio/SwordHit.wav")
+	swordMissSound = preload("res://Audio/SwordMiss.wav")
+	torchLightSound = preload("res://Audio/TorchIgnition.wav")
+	takeDamageSound = preload("res://Audio/TakeDamage.wav")
+	loseLevelSound = preload("res://Audio/LoseLevel.wav")
+	winSound = preload("res://Audio/LevelWin.wav")
+	
+	$JumpStreamPlayer2D.stream = jumpSound
+	$SwordStreamPlayer2D.stream = swordMissSound
+	$TorchStreamPlayer2D.stream = torchLightSound
+	$HurtStreamPlayer2D.stream = takeDamageSound
+	$WinStreamPlayer2D.stream = loseLevelSound
 
-func _physics_process(delta):		
+func _physics_process(delta):
 	velocity.y += get_gravity() * delta
 	velocity.x = get_input_velocity() * walkSpeed
 	
@@ -111,6 +136,8 @@ func get_gravity() -> float:
 
 func jump():
 	velocity.y = jumpVelocity
+	if !$JumpStreamPlayer2D.is_playing():
+		$JumpStreamPlayer2D.play()
 	
 func get_input_velocity() -> float:
 	var horizontal := 0.0
@@ -143,6 +170,8 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("levelWinBox"):
 		levelWon = true
 		levelWinUI.set_visible(true)
+		$WinStreamPlayer2D.stream = winSound
+		$WinStreamPlayer2D.play()
 	if area.is_in_group("torchBoostPickup"):
 		torchBoostPickedUp.emit()
 		torchesArray.append(area)
@@ -157,12 +186,12 @@ func _on_area_2d_area_entered(area):
 	if health <= 0:
 		hide()
 		loseLevel.emit()
-		#$CollisionShape2D.set_deferred("disabled", true)
 
 func _on_torch_boost_picked_up():
 	$Torch/PointLight2D.range_z_max = 1536
 	$Torch/PointLight2D.range_z_min = -1536
 	$Torch/PointLight2D.energy = 2.0
+	$TorchStreamPlayer2D.play()
 
 func setLevelStartPosition(x: float, y: float):
 	position = Vector2(x, y)
@@ -189,7 +218,16 @@ func _on_get_hurt_by_trap_or_falling():
 func _on_lose_health_and_update_ui():
 	health -= 1
 	get_node("/root/Main/CanvasLayer/HealthUi").get_child(0).get_child(1).text = str(":   ", health)
+	if health > 0:
+		$HurtStreamPlayer2D.play()
 
 
 func _on_lose_level():
 	levelLoseUI.set_visible(true)
+	$WinStreamPlayer2D.stream = loseLevelSound
+	$WinStreamPlayer2D.play()
+
+
+func _on_attack():
+	if !$SwordStreamPlayer2D.is_playing():
+		$SwordStreamPlayer2D.play()
