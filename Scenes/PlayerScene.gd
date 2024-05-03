@@ -37,6 +37,7 @@ var torchLightSound
 var winSound
 var loseLevelSound
 var takeDamageSound
+var musicSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,12 +70,16 @@ func _ready():
 	takeDamageSound = preload("res://Audio/TakeDamage.wav")
 	loseLevelSound = preload("res://Audio/LoseLevel.wav")
 	winSound = preload("res://Audio/LevelWin.wav")
+	musicSound = preload("res://Audio/MainMusic.mp3")
 	
 	$JumpStreamPlayer2D.stream = jumpSound
 	$SwordStreamPlayer2D.stream = swordMissSound
 	$TorchStreamPlayer2D.stream = torchLightSound
 	$HurtStreamPlayer2D.stream = takeDamageSound
 	$WinStreamPlayer2D.stream = loseLevelSound
+	$MusicStreamPlayer2D.stream = musicSound
+	
+	$MusicStreamPlayer2D.play()
 
 func _physics_process(delta):
 	velocity.y += get_gravity() * delta
@@ -153,10 +158,10 @@ func get_input_velocity() -> float:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $Torch/PointLight2D.energy > 0.3:
+	if $Torch/PointLight2D.energy > 0.15:
 		$Torch/PointLight2D.range_z_max -= 32 * delta
 		$Torch/PointLight2D.range_z_min += 32 * delta
-		$Torch/PointLight2D.energy -= 0.2 * delta
+		$Torch/PointLight2D.energy -= 0.25 * delta
 
 func _on_body_entered(body):
 	pass

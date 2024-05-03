@@ -50,9 +50,6 @@ position = Vector2(263, 486)
 position = Vector2(731, 298)
 scale = Vector2(1.5, 1.5)
 
-[node name="TorchBoostPickup2" parent="." instance=ExtResource("3_lhnfk")]
-position = Vector2(340, 267)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(793, 261)
 texture = ExtResource("5_ot5jw")

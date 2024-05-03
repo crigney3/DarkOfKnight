@@ -11,3 +11,5 @@ EVRetro - 8-bit damage sound (hurt or fall)
 cabled_mess - Lose_C_05 (game over noise)
 
 rhodesmas - Level Up 01 (win level sound)
+
+HeatleyBros - 8 Bit Halloween (main music)

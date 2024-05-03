@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://tc8hpt04v7qk"]
+
+[ext_resource type="PackedScene" uid="uid://brfhtyoiviskj" path="res://Scenes/torch.tscn" id="1_vij02"]
+
+[node name="GameWinUi" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 543.0
+offset_bottom = 94.0
+
+[node name="BoxContainer" type="BoxContainer" parent="PanelContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.987723, 0.517943, 0.293695, 1)
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Game Complete![/center]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/BoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.776471, 0.619608, 0, 1)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Congratulations![/center]"
+fit_content = true
+
+[node name="Torch" parent="." instance=ExtResource("1_vij02")]
+position = Vector2(22, 64)
+
+[node name="Torch2" parent="." instance=ExtResource("1_vij02")]
+position = Vector2(516, 62)

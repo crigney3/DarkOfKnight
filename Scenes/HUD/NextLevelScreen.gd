@@ -9,6 +9,7 @@ const level4String = "res://Scenes/Levels/Level4.tscn"
 const level5String = "res://Scenes/Levels/Level5.tscn"
 var nextLevelPreloaded
 var nextLevelUI
+var gameWinUI
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 	nextLevel = 2
 	nextLevelPreloaded = preload(level2String).instantiate()
 	nextLevelUI = get_tree().get_first_node_in_group("LevelWinUI")
+	gameWinUI = get_tree().get_first_node_in_group("GameWinUI")
+	gameWinUI.set_visible(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,6 +29,9 @@ func loadNextLevel():
 	currentLevel += 1
 	nextLevel += 1
 	nextLevelUI.set_visible(false)
+	if currentLevel == 4:
+		gameWinUI.set_visible(true)
+		return
 	get_tree().root.get_child(0).add_child(nextLevelPreloaded)
 	get_node("/root/Main/PlayerScene").setLevelStartPosition(50, 400)
 	if currentLevel == 2:

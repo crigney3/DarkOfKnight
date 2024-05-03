@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs87dqehc7pm0"]
+[gd_scene load_steps=9 format=3 uid="uid://bs87dqehc7pm0"]
 
 [ext_resource type="PackedScene" uid="uid://bu1xorjsamwbq" path="res://Scenes/PlayerScene.tscn" id="1_06qn3"]
 [ext_resource type="PackedScene" uid="uid://bmagimu7eqe8s" path="res://Scenes/ScreenDarkness.tscn" id="3_saqts"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl5rbet4dgcu2" path="res://Scenes/HUD/NextLevelScreen.tscn" id="5_pe4do"]
 [ext_resource type="PackedScene" uid="uid://xt24kjdd4c1j" path="res://Scenes/Background.tscn" id="5_td7ew"]
 [ext_resource type="PackedScene" uid="uid://c14e85ifq264o" path="res://Scenes/HUD/HealthUI.tscn" id="6_5kb3f"]
+[ext_resource type="PackedScene" uid="uid://tc8hpt04v7qk" path="res://Scenes/HUD/GameWinUI.tscn" id="7_mimdj"]
 [ext_resource type="PackedScene" uid="uid://bbovortfrgk2i" path="res://Scenes/HUD/LoseScreen.tscn" id="7_xv7fu"]
 
 [node name="Main" type="Node"]
@@ -43,6 +44,12 @@ offset_bottom = 261.0
 light_mask = 2
 visibility_layer = 2
 z_index = 2
+
+[node name="GameWinUi" parent="CanvasLayer" groups=["GameWinUI"] instance=ExtResource("7_mimdj")]
+offset_left = 302.0
+offset_top = 234.0
+offset_right = 302.0
+offset_bottom = 234.0
 
 [node name="LoseScreen" parent="." groups=["LevelLoseUI"] instance=ExtResource("7_xv7fu")]
 z_index = 4
